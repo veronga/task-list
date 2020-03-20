@@ -26,7 +26,7 @@ export default function TodoItem({ title, id, completed }) {
         <span>{title}</span>
 
         <i
-          className="material-icons red-text"
+          className="material-icons"
           onClick={() =>
             dispatch({
               type: "remove",
