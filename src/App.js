@@ -21,7 +21,7 @@ export default function App() {
 
   const addTodo = useCallback(
     event => {
-      if (event.key === "Enter") {
+      if (event.key === "Enter" || event.type === "click") {
         if (todoTitle === "") {
           setError("Пожалуйста введите задачу");
         } else {
@@ -30,8 +30,8 @@ export default function App() {
             payload: todoTitle
           });
           setError("");
+          setTodoTitle("");
         }
-        setTodoTitle("");
       }
     },
     [todoTitle]
@@ -57,7 +57,9 @@ export default function App() {
             onKeyPress={addTodo}
           />
           <label>Задача</label>
-          <img src={button} alt="click on Enter" />
+          <button onClick={addTodo}>
+            <img src={button} alt="arrow" />
+          </button>
         </div>
         <span className="text-error">{error}</span>
         <TodoList todos={state} />

@@ -75,3 +75,12 @@ input {
   margin-left: 20px;
   margin-top: 50px;
 }
+
+button {
+  border: none;
+}
+
+button:focus {
+  border: none;
+  background-color: #ffffff;
+}
